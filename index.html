@@ -81,7 +81,7 @@ a{color:#E3B341}a:hover{color:#F4CF6E}
 <div class="rise d3" style="display: flex; gap: 28px; flex-wrap: wrap; margin-top: 40px">
 <div><div style="font: 700 26px 'Space Grotesk', sans-serif; color: #E3B341">USSF D</div><div style="font-size: 13px; color: #A3A3AB">National license</div></div>
 <div><div style="font: 700 26px 'Space Grotesk', sans-serif; color: #E3B341">U5–U15</div><div style="font-size: 13px; color: #A3A3AB">Ages coached</div></div>
-<div><div style="font: 700 26px 'Space Grotesk', sans-serif; color: #E3B341">[#]</div><div style="font-size: 13px; color: #A3A3AB">Spots this winter</div></div>
+<div><div style="font: 700 26px 'Space Grotesk', sans-serif; color: #E3B341">Limited</div><div style="font-size: 13px; color: #A3A3AB">Spots this winter</div></div>
 </div>
 </div>
 <div class="rise d2" style="position: relative; width: 100%; max-width: 480px; justify-self: center">
@@ -184,7 +184,7 @@ a{color:#E3B341}a:hover{color:#F4CF6E}
 <div><div style="font: 700 18px 'Space Grotesk', sans-serif; color: #E3B341">8-session winter program</div><div style="font-size: 13px; color: #A3A3AB">Full plan · video breakdown · priority scheduling</div></div>
 </div>
 <a class="btn gold" href="#intake" style="margin-top: 26px">Get a custom quote</a>
-<p style="margin: 22px 0 0; font-size: 13px; color: #A3A3AB">Training across Northern Virginia — indoor facility, a local field, or your own space. You choose on the form.</p>
+<p style="margin: 22px 0 0; font-size: 13px; color: #A3A3AB">Training across Northern Virginia — a local field or your own space. You choose on the form.</p>
 </div>
 </div>
 </section>
@@ -199,30 +199,31 @@ a{color:#E3B341}a:hover{color:#F4CF6E}
 <fieldset style="border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px">
 <legend style="font: 700 20px 'Space Grotesk', sans-serif; margin-bottom: 18px; color: #E3B341">Parent &amp; contact</legend>
 <div class="fgrid">
-<div class="field"><label for="pname">Parent / guardian name</label><input id="pname" name="pname" required type="text" autocomplete="name"></div>
-<div class="field"><label for="pemail">Email</label><input id="pemail" name="pemail" required type="email" autocomplete="email"></div>
-<div class="field"><label for="pphone">Mobile (for session recaps)</label><input id="pphone" name="pphone" required type="tel" autocomplete="tel"></div>
-<div class="field"><label for="hear">How did you hear about me?</label><select id="hear" name="hear"><option value="">Choose one</option><option>FuturElitez</option><option>Instagram</option><option>Another parent</option><option>Team coach</option><option>Other</option></select></div>
+<div class="field"><label for="pname">Parent / guardian name <span style="color: #E3B341">*</span></label><input id="pname" name="pname" required type="text" autocomplete="name"></div>
+<div class="field"><label for="pemail">Email <span style="color: #E3B341">*</span></label><input id="pemail" name="pemail" required type="email" autocomplete="email"></div>
+<div class="field"><label for="pphone">Mobile (for session recaps) <span style="color: #E3B341">*</span></label><input id="pphone" name="pphone" required type="tel" autocomplete="tel"></div>
+<div class="field"><label for="hear">How did you hear about me? <span style="color: #E3B341">*</span></label><select id="hear" name="hear" required><option value="">Choose one</option><option>FuturElitez</option><option>Instagram</option><option>Another parent</option><option>Referred by a coach</option><option>Other</option></select></div>
+<div class="field" id="coachwrap" style="display: none"><label for="coachname">Which coach referred you?</label><input id="coachname" name="referring_coach" type="text" placeholder="Coach name and team"></div>
 </div>
 </fieldset>
 
 <fieldset style="border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px">
 <legend style="font: 700 20px 'Space Grotesk', sans-serif; margin-bottom: 18px; color: #E3B341">The player</legend>
 <div class="fgrid">
-<div class="field"><label for="plname">Player name</label><input id="plname" name="plname" required type="text"></div>
-<div class="field"><label for="age">Age / birth year</label><input id="age" name="age" required type="text" inputmode="numeric"></div>
-<div class="field"><label for="club">Current club &amp; team</label><input id="club" name="club" type="text"></div>
-<div class="field"><label for="level">Team level</label><select id="level" name="level"><option value="">Choose one</option><option>Rec</option><option>Travel</option><option>Academy / ECNL / MLS NEXT</option><option>High school</option><option>Not on a team yet</option></select></div>
-<div class="field"><label for="pos1">Primary position</label><select id="pos1" name="pos1"><option value="">Choose one</option><option>Goalkeeper</option><option>Center back</option><option>Full back / wing back</option><option>Defensive mid (6)</option><option>Central mid (8)</option><option>Attacking mid (10)</option><option>Winger</option><option>Striker (9)</option><option>Not sure yet</option></select></div>
+<div class="field"><label for="plname">Player name <span style="color: #E3B341">*</span></label><input id="plname" name="plname" required type="text"></div>
+<div class="field"><label for="age">Age / birth year <span style="color: #E3B341">*</span></label><input id="age" name="age" required type="text" inputmode="numeric"></div>
+<div class="field"><label for="club">Current club &amp; team <span style="color: #E3B341">*</span></label><input id="club" name="club" required type="text"></div>
+<div class="field"><label for="level">Team level <span style="color: #E3B341">*</span></label><select id="level" name="level" required><option value="">Choose one</option><option>Rec</option><option>Travel</option><option>Academy / ECNL / MLS NEXT</option><option>High school</option><option>Not on a team yet</option></select></div>
+<div class="field"><label for="pos1">Primary position <span style="color: #E3B341">*</span></label><select id="pos1" name="pos1" required><option value="">Choose one</option><option>Goalkeeper</option><option>Center back</option><option>Full back / wing back</option><option>Defensive mid (6)</option><option>Central mid (8)</option><option>Attacking mid (10)</option><option>Winger</option><option>Striker (9)</option><option>Not sure yet</option></select></div>
 <div class="field"><label for="pos2">Secondary position</label><select id="pos2" name="pos2"><option value="">Choose one</option><option>Goalkeeper</option><option>Center back</option><option>Full back / wing back</option><option>Defensive mid (6)</option><option>Central mid (8)</option><option>Attacking mid (10)</option><option>Winger</option><option>Striker (9)</option><option>None</option></select></div>
-<div class="field"><label for="foot">Dominant foot</label><select id="foot" name="foot"><option value="">Choose one</option><option>Right</option><option>Left</option><option>Both</option></select></div>
-<div class="field"><label for="yrs">Years playing</label><input id="yrs" name="yrs" type="text" inputmode="numeric"></div>
+<div class="field"><label for="foot">Dominant foot <span style="color: #E3B341">*</span></label><select id="foot" name="foot" required><option value="">Choose one</option><option>Right</option><option>Left</option><option>Both</option></select></div>
+<div class="field"><label for="yrs">Years playing <span style="color: #E3B341">*</span></label><input id="yrs" name="yrs" required type="text" inputmode="numeric"></div>
 </div>
 </fieldset>
 
 <fieldset style="border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px">
 <legend style="font: 700 20px 'Space Grotesk', sans-serif; margin-bottom: 18px; color: #E3B341">Goals</legend>
-<div class="legend">What should we focus on? (pick up to 3)</div>
+<div class="legend">What should we focus on? (pick up to 3) <span style="color: #E3B341">*</span></div>
 <div class="chips">
 <label class="chip"><input type="checkbox" name="focus[]" value="First touch">First touch</label>
 <label class="chip"><input type="checkbox" name="focus[]" value="Finishing">Finishing</label>
@@ -235,9 +236,9 @@ a{color:#E3B341}a:hover{color:#F4CF6E}
 <label class="chip"><input type="checkbox" name="focus[]" value="Confidence on the ball">Confidence on the ball</label>
 <label class="chip"><input type="checkbox" name="focus[]" value="Goalkeeping">Goalkeeping</label>
 </div>
-<div class="legend" style="margin-top: 10px">Main goal for this winter</div>
+<div class="legend" style="margin-top: 10px">Main goal for this winter <span style="color: #E3B341">*</span></div>
 <div class="chips">
-<label class="chip"><input type="radio" name="main_goal" value="Make a higher team at tryouts">Make a higher team at tryouts</label>
+<label class="chip"><input type="radio" name="main_goal" required value="Make a higher team at tryouts">Make a higher team at tryouts</label>
 <label class="chip"><input type="radio" name="main_goal" value="Earn more playing time">Earn more playing time</label>
 <label class="chip"><input type="radio" name="main_goal" value="Stay sharp in the off-season">Stay sharp in the off-season</label>
 <label class="chip"><input type="radio" name="main_goal" value="Build confidence & love of the game">Build confidence &amp; love of the game</label>
@@ -247,9 +248,9 @@ a{color:#E3B341}a:hover{color:#F4CF6E}
 <div class="field"><label for="tryout">Upcoming tryout or key date</label><input id="tryout" name="tryout" type="text" placeholder="e.g. spring tryouts, March"></div>
 <div class="field"><label for="coachsays">What does their team coach say they need?</label><input id="coachsays" name="coachsays" type="text"></div>
 </div>
-<div class="field"><label for="strength">Biggest strength right now</label><textarea id="strength" name="strength"></textarea></div>
-<div class="field"><label for="improve">In your words — what would make this winter a success?</label><textarea id="improve" name="improve"></textarea></div>
-<div class="field"><label for="player">What does your player say they want to get better at?</label><textarea id="player" name="player"></textarea></div>
+<div class="field"><label for="strength">Biggest strength right now <span style="color: #E3B341">*</span></label><textarea id="strength" name="strength" required></textarea></div>
+<div class="field"><label for="improve">In your words — what would make this winter a success? <span style="color: #E3B341">*</span></label><textarea id="improve" name="improve" required></textarea></div>
+<div class="field"><label for="player">What does your player say they want to get better at? <span style="color: #E3B341">*</span></label><textarea id="player" name="player" required></textarea></div>
 </fieldset>
 
 <fieldset style="border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px">
@@ -258,26 +259,25 @@ a{color:#E3B341}a:hover{color:#F4CF6E}
 <div class="field"><label for="city">Your city / town</label><input id="city" name="city" type="text" autocomplete="address-level2" placeholder="e.g. Ashburn"></div>
 <div class="field"><label for="zip">ZIP code</label><input id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code"></div>
 </div>
-<div class="legend">Preferred training location</div>
+<div class="legend">Preferred training location <span style="color: #E3B341">*</span></div>
 <div class="chips">
-<label class="chip"><input type="radio" name="training_location" value="Indoor facility">Indoor facility</label>
-<label class="chip"><input type="radio" name="training_location" value="Local park or field near us">Local park or field near us</label>
+<label class="chip"><input type="radio" name="training_location" required value="Local park or field near us">Local park or field near us</label>
 <label class="chip"><input type="radio" name="training_location" value="Our backyard / home space">Our backyard / home space</label>
 <label class="chip"><input type="radio" name="training_location" value="Flexible — coach's choice">Flexible — coach's choice</label>
 </div>
 <div class="fgrid">
-<div class="field"><label for="field">Name or address of a field you'd like to use</label><input id="field" name="field" type="text" placeholder="Optional"></div>
-<div class="field"><label for="travel">How far will you travel?</label><select id="travel" name="travel"><option value="">Choose one</option><option>Up to 10 minutes</option><option>Up to 20 minutes</option><option>Up to 30 minutes</option><option>Anywhere in NoVA</option></select></div>
+<div class="field"><label for="field">Name or address of the field / home location <span id="fieldstar" style="color: #E3B341; display: none">*</span></label><input id="field" name="field" type="text" placeholder="Required for park or home training"></div>
+<div class="field"><label for="travel">How far will you travel? <span id="travelstar" style="color: #E3B341; display: none">*</span></label><select id="travel" name="travel"><option value="">Choose one</option><option>Up to 10 minutes</option><option>Up to 20 minutes</option><option>Up to 30 minutes</option><option>Anywhere in NoVA</option></select></div>
 </div>
 </fieldset>
 
 <fieldset style="border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px">
 <legend style="font: 700 20px 'Space Grotesk', sans-serif; margin-bottom: 18px; color: #E3B341">Logistics</legend>
 <div class="fgrid">
-<div class="field"><label for="pkg">Package interest</label><select id="pkg" name="pkg"><option value="">Choose one</option><option>Single session</option><option>4-session block</option><option>8-session winter program</option><option>Not sure — let's talk</option></select></div>
-<div class="field"><label for="budget">Budget per session</label><select id="budget" name="budget"><option value="">Choose one</option><option>Under $50</option><option>$50–$75</option><option>$75–$100</option><option>$100+</option><option>Let's discuss</option></select></div>
-<div class="field"><label for="freq">Sessions per week</label><select id="freq" name="freq"><option value="">Choose one</option><option>1</option><option>2</option><option>3+</option></select></div>
-<div class="field"><label for="times">Preferred days &amp; times</label><input id="times" name="times" type="text" placeholder="e.g. Tue/Thu after 5pm"></div>
+<div class="field"><label for="pkg">Package interest <span style="color: #E3B341">*</span></label><select id="pkg" name="pkg" required><option value="">Choose one</option><option>Single session</option><option>4-session block</option><option>8-session winter program</option><option>Not sure — let's talk</option></select></div>
+<div class="field"><label for="budget">Budget per session <span style="color: #E3B341">*</span></label><input id="budget" name="budget" type="text" placeholder="e.g. $60 per session" required></div>
+<div class="field"><label for="freq">Sessions per week <span style="color: #E3B341">*</span></label><select id="freq" name="freq" required><option value="">Choose one</option><option>1</option><option>2</option><option>3+</option></select></div>
+<div class="field"><label for="times">Preferred days &amp; times <span style="color: #E3B341">*</span></label><input id="times" name="times" required type="text" placeholder="e.g. Tue/Thu after 5pm"></div>
 </div>
 <div class="field"><label for="notes">Injuries, learning style or anything else I should know</label><textarea id="notes" name="notes"></textarea></div>
 <label class="chip" style="border-radius: 12px; padding: 12px 16px"><input type="checkbox" name="filming_ok" value="yes">I'm OK with session clips being filmed for my player's feedback</label>
@@ -285,12 +285,34 @@ a{color:#E3B341}a:hover{color:#F4CF6E}
 
 <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px">
 <button class="btn gold" type="submit">Submit intake</button>
-<span style="font-size: 13px; color: #A3A3AB">I'll reply within 24 hours to set up a quick call.</span>
+<span style="font-size: 13px; color: #A3A3AB"><span style="color: #E3B341">*</span> Required. I'll reply within 24 hours to set up a quick call.</span>
 </div>
 </form>
 </section>
 
 <footer class="pad" style="position: relative; border-top: 1px solid #1F1F23; padding: 28px 40px; text-align: center; font-size: 13px; color: #8E8E96">Coach Ckam · 1-on-1 Training · Northern Virginia · [INSTAGRAM / CONTACT]</footer>
 </div>
+<script>
+(function(){
+  var f=document.querySelector('form');
+  var hear=document.getElementById('hear'),cw=document.getElementById('coachwrap'),cn=document.getElementById('coachname');
+  function hearChk(){var on=hear.value==='Referred by a coach';cw.style.display=on?'':'none';cn.required=on;}
+  hear.addEventListener('change',hearChk);hearChk();
+  var fld=document.getElementById('field'),tr=document.getElementById('travel');
+  function locChk(){
+    var v=(f.querySelector('input[name="training_location"]:checked')||{}).value||'';
+    var needField=/park|backyard/i.test(v), needTravel=/coach/i.test(v);
+    fld.required=needField;document.getElementById('fieldstar').style.display=needField?'':'none';
+    tr.required=needTravel;document.getElementById('travelstar').style.display=needTravel?'':'none';
+  }
+  f.querySelectorAll('input[name="training_location"]').forEach(function(r){r.addEventListener('change',locChk)});locChk();
+  var boxes=f.querySelectorAll('input[name="focus[]"]');
+  function focusChk(){
+    var n=0;boxes.forEach(function(b){if(b.checked)n++});
+    boxes[0].setCustomValidity(n===0?'Pick at least one focus area.':n>3?'Pick up to 3 focus areas.':'');
+  }
+  boxes.forEach(function(b){b.addEventListener('change',focusChk)});focusChk();
+})();
+</script>
 </body>
 </html>
