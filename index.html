@@ -89,6 +89,7 @@ a{color:#E3B341}a:hover{color:#F4CF6E}
 <div class="rise d3" style="display: flex; gap: 28px; flex-wrap: wrap; margin-top: 40px">
 <div><div style="font: 700 26px 'Space Grotesk', sans-serif; color: #E3B341">USSF D</div><div style="font-size: 13px; color: #A3A3AB">National license</div></div>
 <div><div style="font: 700 26px 'Space Grotesk', sans-serif; color: #E3B341">U5–U15</div><div style="font-size: 13px; color: #A3A3AB">Ages coached</div></div>
+<div><div style="font: 700 26px 'Space Grotesk', sans-serif; color: #E3B341">College &amp; Semi-Pro</div><div style="font-size: 13px; color: #A3A3AB">Higher level</div></div>
 <div><div style="font: 700 26px 'Space Grotesk', sans-serif; color: #E3B341">Limited</div><div style="font-size: 13px; color: #A3A3AB">Spots this winter</div></div>
 </div>
 </div>
@@ -145,7 +146,7 @@ a{color:#E3B341}a:hover{color:#F4CF6E}
 <div class="grid2" style="align-items: start">
 <div>
 <h2 style="margin: 0 0 18px; font: 700 42px/1.1 'Space Grotesk', sans-serif; letter-spacing: -0.02em">Coached the right way, at every age.</h2>
-<p style="margin: 0 0 16px; color: #B9B9C0; font-size: 16px; line-height: 1.65">I'm Ckameron — a former player and FuturElitez coach working with players from U5 to U15 across Northern Virginia, with an academy technical director background.</p>
+<p style="margin: 0 0 16px; color: #B9B9C0; font-size: 16px; line-height: 1.65">I'm Ckameron — a former player and FuturElitez coach working with players from U5 youth up to college athletes across Northern Virginia, with an academy technical director background.</p>
 <p style="margin: 0 0 28px; color: #B9B9C0; font-size: 16px; line-height: 1.65">One-on-one is where I can go deepest: real game moments, honest feedback, and a plan your player actually understands.</p>
 <div class="card" style="padding: 18px; display: flex; gap: 18px; align-items: center; flex-wrap: wrap">
 <img src="images/license.png" alt="U.S. Soccer National D Coaching License issued to Ckameron Azizsired, August 29, 2026" style="width: 200px; max-width: 100%; border-radius: 8px; display: block">
@@ -205,11 +206,18 @@ a{color:#E3B341}a:hover{color:#F4CF6E}
 <input type="hidden" name="_subject" value="New 1-on-1 training intake">
 
 <fieldset style="border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px">
-<legend style="font: 700 20px 'Space Grotesk', sans-serif; margin-bottom: 18px; color: #E3B341">Parent &amp; contact</legend>
+<legend style="font: 700 20px 'Space Grotesk', sans-serif; margin-bottom: 18px; color: #E3B341">Your contact info</legend>
+<div class="legend">Who's filling this out? <span style="color: #E3B341">*</span></div>
+<div class="chips">
+<label class="chip"><input type="radio" name="submitted_by" required value="Parent / guardian">Parent / guardian</label>
+<label class="chip"><input type="radio" name="submitted_by" value="The player (college / adult)">The player (college / adult)</label>
+<label class="chip"><input type="radio" name="submitted_by" value="A coach referring a player">A coach referring a player</label>
+</div>
 <div class="fgrid">
-<div class="field"><label for="pname">Parent / guardian name <span style="color: #E3B341">*</span></label><input id="pname" name="pname" required type="text" autocomplete="name"></div>
+<div class="field"><label for="pname">Your name <span style="color: #E3B341">*</span></label><input id="pname" name="pname" required type="text" autocomplete="name"></div>
 <div class="field"><label for="pemail">Email <span style="color: #E3B341">*</span></label><input id="pemail" name="pemail" required type="email" autocomplete="email"></div>
 <div class="field"><label for="pphone">Mobile (for session recaps) <span style="color: #E3B341">*</span></label><input id="pphone" name="pphone" required type="tel" autocomplete="tel"></div>
+<div class="field" id="cteamwrap" style="display: none"><label for="cteam">Your team / school (coaches) <span style="color: #E3B341">*</span></label><input id="cteam" name="coach_team" type="text" placeholder="e.g. Head coach, George Mason Men's Soccer"></div>
 <div class="field"><label for="hear">How did you hear about me? <span style="color: #E3B341">*</span></label><select id="hear" name="hear" required><option value="">Choose one</option><option>FuturElitez</option><option>Instagram</option><option>Another parent</option><option>Referred by a coach</option><option>Other</option></select></div>
 <div class="field" id="coachwrap" style="display: none"><label for="coachname">Which coach referred you?</label><input id="coachname" name="referring_coach" type="text" placeholder="Coach name and team"></div>
 </div>
@@ -221,7 +229,10 @@ a{color:#E3B341}a:hover{color:#F4CF6E}
 <div class="field"><label for="plname">Player name <span style="color: #E3B341">*</span></label><input id="plname" name="plname" required type="text"></div>
 <div class="field"><label for="age">Age / birth year <span style="color: #E3B341">*</span></label><input id="age" name="age" required type="text" inputmode="numeric"></div>
 <div class="field"><label for="club">Current club &amp; team <span style="color: #E3B341">*</span></label><input id="club" name="club" required type="text"></div>
-<div class="field"><label for="level">Team level <span style="color: #E3B341">*</span></label><select id="level" name="level" required><option value="">Choose one</option><option>Rec</option><option>Travel</option><option>Academy / ECNL / MLS NEXT</option><option>High school</option><option>Not on a team yet</option></select></div>
+<div class="field"><label for="level">Team level <span style="color: #E3B341">*</span></label><select id="level" name="level" required><option value="">Choose one</option><option>Rec</option><option>Travel</option><option>Academy / ECNL / MLS NEXT</option><option>High school</option><option>College athlete</option><option>Semi-pro</option><option>Not on a team yet</option></select></div>
+<div class="field" id="collegewrap" style="display: none"><label for="college">Which college do you play for? <span style="color: #E3B341">*</span></label><input id="college" name="college" type="text" placeholder="e.g. George Mason University"></div>
+<div class="field" id="semiwrap" style="display: none"><label for="semiteam">Which semi-pro team do you play for? <span style="color: #E3B341">*</span></label><input id="semiteam" name="semipro_team" type="text" placeholder="Team name"></div>
+<div class="field" id="divwrap" style="display: none"><label for="division">Division</label><select id="division" name="division"><option value="">Choose one</option><option>NCAA Division I</option><option>NCAA Division II</option><option>NCAA Division III</option><option>NAIA</option><option>NJCAA / Junior college</option><option>Club / intramural</option></select></div>
 <div class="field"><label for="pos1">Primary position <span style="color: #E3B341">*</span></label><select id="pos1" name="pos1" required><option value="">Choose one</option><option>Goalkeeper</option><option>Center back</option><option>Full back / wing back</option><option>Defensive mid (6)</option><option>Central mid (8)</option><option>Attacking mid (10)</option><option>Winger</option><option>Striker (9)</option><option>Not sure yet</option></select></div>
 <div class="field"><label for="pos2">Secondary position</label><select id="pos2" name="pos2"><option value="">Choose one</option><option>Goalkeeper</option><option>Center back</option><option>Full back / wing back</option><option>Defensive mid (6)</option><option>Central mid (8)</option><option>Attacking mid (10)</option><option>Winger</option><option>Striker (9)</option><option>None</option></select></div>
 <div class="field"><label for="foot">Dominant foot <span style="color: #E3B341">*</span></label><select id="foot" name="foot" required><option value="">Choose one</option><option>Right</option><option>Left</option><option>Both</option></select></div>
@@ -249,8 +260,9 @@ a{color:#E3B341}a:hover{color:#F4CF6E}
 <label class="chip"><input type="radio" name="main_goal" required value="Make a higher team at tryouts">Make a higher team at tryouts</label>
 <label class="chip"><input type="radio" name="main_goal" value="Earn more playing time">Earn more playing time</label>
 <label class="chip"><input type="radio" name="main_goal" value="Stay sharp in the off-season">Stay sharp in the off-season</label>
+<label class="chip"><input type="radio" name="main_goal" value="Off-season prep for my college season">Off-season prep for my college season</label>
 <label class="chip"><input type="radio" name="main_goal" value="Build confidence & love of the game">Build confidence &amp; love of the game</label>
-<label class="chip"><input type="radio" name="main_goal" value="Prepare for high school / college">Prepare for high school / college</label>
+<label class="chip"><input type="radio" name="main_goal" value="Prepare for high school / college recruiting">Prepare for high school / college recruiting</label>
 </div>
 <div class="fgrid" style="margin-top: 6px">
 <div class="field"><label for="tryout">Upcoming tryout or key date</label><input id="tryout" name="tryout" type="text" placeholder="e.g. spring tryouts, March"></div>
@@ -320,6 +332,12 @@ a{color:#E3B341}a:hover{color:#F4CF6E}
     boxes[0].setCustomValidity(n===0?'Pick at least one focus area.':n>3?'Pick up to 3 focus areas.':'');
   }
   boxes.forEach(function(b){b.addEventListener('change',focusChk)});focusChk();
+  var sub=f.querySelectorAll('input[name="submitted_by"]'),ctw=document.getElementById('cteamwrap'),ct=document.getElementById('cteam');
+  function subChk(){var v=(f.querySelector('input[name="submitted_by"]:checked')||{}).value||'';var on=/coach/i.test(v);ctw.style.display=on?'':'none';ct.required=on;}
+  sub.forEach(function(r){r.addEventListener('change',subChk)});subChk();
+  var lvl=document.getElementById('level'),cw2=document.getElementById('collegewrap'),dw=document.getElementById('divwrap'),col=document.getElementById('college');
+  function lvlChk(){var on=lvl.value==='College athlete';cw2.style.display=on?'':'none';dw.style.display=on?'':'none';col.required=on;var sp=lvl.value==='Semi-pro';document.getElementById('semiwrap').style.display=sp?'':'none';document.getElementById('semiteam').required=sp;}
+  lvl.addEventListener('change',lvlChk);lvlChk();
 })();
 </script>
 </body>
