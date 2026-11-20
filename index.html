@@ -228,11 +228,12 @@ a{color:#E3B341}a:hover{color:#F4CF6E}
 <div class="fgrid">
 <div class="field"><label for="plname">Player name <span style="color: #E3B341">*</span></label><input id="plname" name="plname" required type="text"></div>
 <div class="field"><label for="age">Age / birth year <span style="color: #E3B341">*</span></label><input id="age" name="age" required type="text" inputmode="numeric"></div>
-<div class="field"><label for="club">Current club &amp; team <span style="color: #E3B341">*</span></label><input id="club" name="club" required type="text"></div>
 <div class="field"><label for="level">Team level <span style="color: #E3B341">*</span></label><select id="level" name="level" required><option value="">Choose one</option><option>Rec</option><option>Travel</option><option>Academy / ECNL / MLS NEXT</option><option>High school</option><option>College athlete</option><option>Semi-pro</option><option>Not on a team yet</option></select></div>
-<div class="field" id="collegewrap" style="display: none"><label for="college">Which college do you play for? <span style="color: #E3B341">*</span></label><input id="college" name="college" type="text" placeholder="e.g. George Mason University"></div>
-<div class="field" id="semiwrap" style="display: none"><label for="semiteam">Which semi-pro team do you play for? <span style="color: #E3B341">*</span></label><input id="semiteam" name="semipro_team" type="text" placeholder="Team name"></div>
+<div class="field" id="clubwrap" style="display: none"><label for="club"><span id="clublabel">Current club &amp; team</span> <span style="color: #E3B341">*</span></label><input id="club" name="current_team" type="text"></div>
 <div class="field" id="divwrap" style="display: none"><label for="division">Division</label><select id="division" name="division"><option value="">Choose one</option><option>NCAA Division I</option><option>NCAA Division II</option><option>NCAA Division III</option><option>NAIA</option><option>NJCAA / Junior college</option><option>Club / intramural</option></select></div>
+<div class="field" id="yearwrap" style="display: none"><label for="schoolyear">Year in school <span style="color: #E3B341">*</span></label><select id="schoolyear" name="school_year"><option value="">Choose one</option><option>Freshman</option><option>Sophomore</option><option>Junior</option><option>Senior</option><option>Grad / 5th year</option></select></div>
+<div class="field" id="filmwrap"><label for="film">Game film link (optional)</label><input id="film" name="film_link" type="url" placeholder="Hudl, Veo, Trace or YouTube link"></div>
+<label class="chip" id="ruleswrap" style="border-radius: 12px; padding: 12px 16px; grid-column: 1 / -1; display: none"><input type="checkbox" id="rules" name="college_rules_ok" value="yes">My college team allows outside training during this period <span style="color: #E3B341">*</span></label>
 <div class="field"><label for="pos1">Primary position <span style="color: #E3B341">*</span></label><select id="pos1" name="pos1" required><option value="">Choose one</option><option>Goalkeeper</option><option>Center back</option><option>Full back / wing back</option><option>Defensive mid (6)</option><option>Central mid (8)</option><option>Attacking mid (10)</option><option>Winger</option><option>Striker (9)</option><option>Not sure yet</option></select></div>
 <div class="field"><label for="pos2">Secondary position</label><select id="pos2" name="pos2"><option value="">Choose one</option><option>Goalkeeper</option><option>Center back</option><option>Full back / wing back</option><option>Defensive mid (6)</option><option>Central mid (8)</option><option>Attacking mid (10)</option><option>Winger</option><option>Striker (9)</option><option>None</option></select></div>
 <div class="field"><label for="foot">Dominant foot <span style="color: #E3B341">*</span></label><select id="foot" name="foot" required><option value="">Choose one</option><option>Right</option><option>Left</option><option>Both</option></select></div>
@@ -254,6 +255,8 @@ a{color:#E3B341}a:hover{color:#F4CF6E}
 <label class="chip"><input type="checkbox" name="focus[]" value="Scanning / decisions">Scanning / decisions</label>
 <label class="chip"><input type="checkbox" name="focus[]" value="Confidence on the ball">Confidence on the ball</label>
 <label class="chip"><input type="checkbox" name="focus[]" value="Goalkeeping">Goalkeeping</label>
+<label class="chip"><input type="checkbox" name="focus[]" value="Fitness / speed endurance">Fitness / speed endurance</label>
+<label class="chip"><input type="checkbox" name="focus[]" value="Position tactics / film review">Position tactics / film review</label>
 </div>
 <div class="legend" style="margin-top: 10px">Main goal for this winter <span style="color: #E3B341">*</span></div>
 <div class="chips">
@@ -265,7 +268,7 @@ a{color:#E3B341}a:hover{color:#F4CF6E}
 <label class="chip"><input type="radio" name="main_goal" value="Prepare for high school / college recruiting">Prepare for high school / college recruiting</label>
 </div>
 <div class="fgrid" style="margin-top: 6px">
-<div class="field"><label for="tryout">Upcoming tryout or key date</label><input id="tryout" name="tryout" type="text" placeholder="e.g. spring tryouts, March"></div>
+<div class="field"><label for="tryout">Upcoming tryout, preseason report date, or key date</label><input id="tryout" name="tryout" type="text" placeholder="e.g. spring tryouts, March"></div>
 <div class="field"><label for="coachsays">What does their team coach say they need?</label><input id="coachsays" name="coachsays" type="text"></div>
 </div>
 <div class="field"><label for="strength">Biggest strength right now <span style="color: #E3B341">*</span></label><textarea id="strength" name="strength" required></textarea></div>
@@ -335,8 +338,16 @@ a{color:#E3B341}a:hover{color:#F4CF6E}
   var sub=f.querySelectorAll('input[name="submitted_by"]'),ctw=document.getElementById('cteamwrap'),ct=document.getElementById('cteam');
   function subChk(){var v=(f.querySelector('input[name="submitted_by"]:checked')||{}).value||'';var on=/coach/i.test(v);ctw.style.display=on?'':'none';ct.required=on;}
   sub.forEach(function(r){r.addEventListener('change',subChk)});subChk();
-  var lvl=document.getElementById('level'),cw2=document.getElementById('collegewrap'),dw=document.getElementById('divwrap'),col=document.getElementById('college');
-  function lvlChk(){var on=lvl.value==='College athlete';cw2.style.display=on?'':'none';dw.style.display=on?'':'none';col.required=on;var sp=lvl.value==='Semi-pro';document.getElementById('semiwrap').style.display=sp?'':'none';document.getElementById('semiteam').required=sp;}
+  var lvl=document.getElementById('level'),clw=document.getElementById('clubwrap'),cl=document.getElementById('club'),cll=document.getElementById('clublabel');
+  var TEAM={'College athlete':['Which college do you play for?','e.g. George Mason University'],'Semi-pro':['Which semi-pro team do you play for?','Team name'],'High school':['Current high school &amp; club team','e.g. Stone Bridge HS / Loudoun Soccer']};
+  function show(id,on){document.getElementById(id).style.display=on?'':'none';}
+  function lvlChk(){
+    var v=lvl.value,col=v==='College athlete',showTeam=v!==''&&v!=='Not on a team yet';
+    var t=TEAM[v]||['Current club &amp; team','e.g. Loudoun Soccer U12 Red'];
+    cll.innerHTML=t[0];cl.placeholder=t[1];clw.style.display=showTeam?'':'none';cl.required=showTeam;
+    show('divwrap',col);show('yearwrap',col);show('ruleswrap',col);
+    document.getElementById('schoolyear').required=col;document.getElementById('rules').required=col;
+  }
   lvl.addEventListener('change',lvlChk);lvlChk();
 })();
 </script>
